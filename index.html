@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congo Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @media (min-width: 501px) {
+            .mobile-nav { display: none !important; }
+        }
+        .airtel-logo {
+            display: inline-block;
+            vertical-align: middle;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+        .pay-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #ed1b2f;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 0.7rem 1.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #ed1b2f44;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+        .pay-btn:hover {
+            background: #b31322;
+        }
+        .pay-info {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-top: 0.5rem;
+            background: rgba(237,27,47,0.08);
+            border-radius: 8px;
+            padding: 0.3rem 0.7rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+    <header>
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ffe7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" opacity="0.2" fill="#00ffe7"/>
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <span>Congo Developer</span>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="chat.html">Chat</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bienvenue sur <span>Congo Developer</span></h1>
+            <p>Votre partenaire pour des solutions numériques innovantes au cœur de l'Afrique.</p>
+            <a href="services.html" class="cta-btn">Découvrir nos services</a>
+        </section>
+
+        <!-- Témoignage Wilson -->
+        <section class="wilson-story" style="max-width:700px;margin:2rem auto 0 auto;background:rgba(20,30,48,0.7);border-radius:18px;padding:1.5rem;box-shadow:0 2px 12px #00ffe733;display:flex;align-items:center;gap:1.5rem;">
+            <img src="images/profile_wilson.jpg" alt="Wilson" style="width:90px;height:90px;border-radius:50%;border:3px solid #00ffe7;">
+            <div>
+                <h3 style="color:#00ffe7;margin:0 0 0.5rem 0;">Wilson, client satisfait</h3>
+                <p style="margin:0;">
+                    "Grâce à Congo Developer, j’ai pu lancer mon projet web en toute confiance. L’équipe est à l’écoute, rapide et très professionnelle. Je recommande à 100% !"
+                </p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-robot"></i></div>
+                <h2>IA & Automatisation</h2>
+                <p>Des solutions intelligentes pour booster votre productivité et innover.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-globe"></i></div>
+                <h2>Web Futuriste</h2>
+                <p>Des sites web modernes, rapides et immersifs, pensés pour demain.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-shield"></i></div>
+                <h2>Sécurité</h2>
+                <p>Protégez vos données et vos utilisateurs avec les dernières technologies.</p>
+            </div>
+            <!-- Vente de Livres -->
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-book"></i></div>
+                <h2>Vente de Livres</h2>
+                <p>Découvrez nos livres spécialisés pour apprendre et progresser dans le numérique.</p>
+                <button id="kntt" class="cta-btn pay-btn" onclick="openModal('livres')">
+                    <!--<img src="#" alt="" style="width:28px;height:28px;vertical-align:middle;margin-right:8px;">-->
+                    Livres
+                </button>
+                <div class="pay-info">
+                    
+                </div>
+            </div>
+            <!-- Vente de Logiciels -->
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-laptop"></i></div>
+                <h2>Vente de Logiciels</h2>
+                <p>Des logiciels performants et adaptés à vos besoins professionnels ou personnels.</p>
+                <button class="cta-btn pay-btn" onclick="openModal('logiciels')">
+                    <!--<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Airtel_logo.svg" alt="Airtel Money" style="width:28px;height:28px;vertical-align:middle;margin-right:8px;">-->
+                    Logiciels
+                </button>
+                <div class="pay-info">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <nav class="mobile-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i><br><span>Accueil</span></a>
+        <a href="chat.html"><i class="fa-solid fa-comment"></i><br><span>Chat</span></a>
+        <a href="services.html"><i class="fa-solid fa-briefcase"></i><br><span>Services</span></a>
+        <a href="contact.html"><i class="fa-solid fa-user"></i><br><span>Contact</span></a>
+    </nav>
+    <footer>
+        <p>&copy; 2025 Congo Developer. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Modal pour liste et achat -->
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+        <div id="modal-content" style="background:#222; color:#fff; border-radius:16px; max-width:95vw; width:400px; padding:2rem; position:relative;">
+            <button onclick="closeModal()" style="position:absolute;top:10px;right:16px;font-size:1.5rem;background:none;border:none;color:#fff;cursor:pointer;">&times;</button>
+            <div id="modal-list"></div>
+        </div>
+    </div>
+    <script>
+    const livres = [
+        "Python Facile", "JavaScript Moderne", "Développement Web", "Intelligence Artificielle", "Sécurité Informatique",
+        "Bases de Données", "React pour Débutants", "Node.js Pratique", "UX/UI Design", "Linux pour Tous",
+        "Cloud Computing", "Automatisation avec Python"
+    ];
+    const logiciels = [
+        "Gestionnaire de Stock", "Facturation Pro", "CRM Simple", "Editeur de Texte", "Antivirus Léger",
+        "Gestion de Projets", "Agenda Collaboratif", "Outil de Backup", "Analyseur de Données", "Chatbot IA",
+        "Gestion RH", "Logiciel de Comptabilité"
+    ];
+
+    function openModal(type) {
+        const items = type === 'livres' ? livres : logiciels;
+        let html = `<h3>Choisissez un ${type === 'livres' ? 'livre' : 'logiciel'} à acheter</h3><ul style="padding-left:1.2em;">`;
+        items.forEach((item, i) => {
+            html += `<li style="margin-bottom:0.7em;">
+                <span>${item}</span>
+                <button onclick="openAirtelForm('${item.replace(/'/g,"\\'")}')" style="margin-left:1em;padding:0.3em 1em;border-radius:8px;background:#ed1b2f;color:#fff;border:none;cursor:pointer;">Acheter</button>
+            </li>`;
+        });
+        html += '</ul>';
+        document.getElementById('modal-list').innerHTML = html;
+        document.getElementById('modal').style.display = 'flex';
+    }
+    function openAirtelForm(item) {
+        document.getElementById('modal-list').innerHTML = `
+            <h3>Achat : ${item}</h3>
+            <form onsubmit="return submitAirtelForm(event)">
+                <label>Nom complet<br><input type="text" name="nom" required style="width:100%;padding:0.5em;margin-bottom:1em;"></label>
+                <label>Numéro Airtel Money (+243)<br><input type="tel" name="numero" required pattern="\\+243[0-9]{9}" placeholder="+243..." style="width:100%;padding:0.5em;margin-bottom:1em;"></label>
+                <button type="submit" style="background:#00ffe7;color:#222;padding:0.7em 2em;border:none;border-radius:12px;font-weight:bold;cursor:pointer;">Valider l'achat</button>
+            </form>
+            <button onclick="closeModal()" style="margin-top:1em;background:none;color:#fff;border:none;cursor:pointer;text-decoration:underline;">Retour</button>
+        `;
+    }
+    function submitAirtelForm(e) {
+        e.preventDefault();
+        alert("Merci pour votre achat ! Nous allons vous contacter rapidement.");
+        closeModal();
+        return false;
+    }
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+    </script>
+    <script src="script.js"></script>
+</body>

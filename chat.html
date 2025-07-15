@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Congo Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .chat-container {
+            max-width: 480px;
+            margin: 2rem auto;
+            background: rgba(20,30,48,0.85);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #00ffe744;
+            padding: 1.5rem 1rem 1rem 1rem;
+            position: relative;
+        }
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .chat-header img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid #00ffe7;
+        }
+        .chat-header .profile-info {
+            flex: 1;
+        }
+        .chat-header .profile-info .name {
+            font-weight: bold;
+            color: #00ffe7;
+            font-size: 1.1rem;
+        }
+        .chat-header .profile-info .role {
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+        .chat-history {
+            min-height: 220px;
+            max-height: 320px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding-right: 0.5rem;
+        }
+        .msg {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+        .msg.user {
+            flex-direction: row-reverse;
+        }
+        .msg .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin: 0 0.7rem;
+            border: 2px solid #00ffe7;
+        }
+        .msg .bubble {
+            background: #222c36;
+            color: #fff;
+            padding: 0.7em 1.1em;
+            border-radius: 18px;
+            max-width: 70%;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px #00ffe722;
+        }
+        .msg.user .bubble {
+            background: #00ffe7;
+            color: #222;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 18px;
+        }
+        .msg.agent .bubble {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 18px;
+        }
+        .chat-input-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .chat-input-row input {
+            flex: 1;
+            padding: 0.7em;
+            border-radius: 12px;
+            border: none;
+            font-size: 1rem;
+        }
+        .chat-input-row button {
+            background: #00ffe7;
+            color: #222;
+            border: none;
+            border-radius: 12px;
+            padding: 0.7em 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chat-input-row button:hover {
+            background: #00cfc7;
+        }
+        .about-page {
+            margin: 2.5rem auto 0 auto;
+            max-width: 480px;
+            background: rgba(20,30,48,0.7);
+            border-radius: 16px;
+            padding: 1.2rem 1rem;
+            color: #e0e0e0;
+            font-size: 1rem;
+            box-shadow: 0 2px 12px #00ffe733;
+        }
+        .about-page h3 {
+            color: #00ffe7;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+    <header>
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ffe7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" opacity="0.2" fill="#00ffe7"/>
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <span>Congo Developer</span>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="chat.html" class="active">Chat</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" style="padding:0;">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <img src="images/profile_wilson.jpg" alt="Client">
+                    <div class="profile-info">
+                        <div class="name">Wilson (Vous)</div>
+                        <div class="role">Client</div>
+                    </div>
+                    <img src="images/aaaaaaaaaa.png" alt="Agent" title="Service client Congo Developer">
+                </div>
+                <div class="chat-history" id="chat-history">
+                    <!-- Historique des messages ici -->
+                </div>
+                <form class="chat-input-row" onsubmit="return sendMessage(event)">
+                    <input type="text" id="chat-input" placeholder="Écrivez votre message..." autocomplete="off" required>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            <div class="about-page">
+                <h3>À propos de cette page</h3>
+                <p>
+                    Ce service de chat vous permet de discuter en direct avec notre équipe ou notre assistant virtuel.<br>
+                    Posez vos questions, demandez un devis ou suivez l’avancement de votre projet : nous sommes là pour vous aider !
+                </p>
+            </div>
+        </section>
+    </main>
+    <nav class="mobile-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i><br><span>Accueil</span></a>
+        <a href="chat.html"><i class="fa-solid fa-comment"></i><br><span>Chat</span></a>
+        <a href="services.html"><i class="fa-solid fa-briefcase"></i><br><span>Services</span></a>
+        <a href="contact.html"><i class="fa-solid fa-user"></i><br><span>Contact</span></a>
+    </nav>
+    <footer>
+        <p>&copy; 2025 Congo Developer. Tous droits réservés.</p>
+    </footer>
+    <script>
+    // Profils
+    const user = {
+        name: "Wilson",
+        avatar: "images/aaaaaaaaaa.png"
+    };
+    const agent = {
+        name: "Service CongoDev",
+        avatar: "images/profile_wilson.jpg"
+    };
+
+    // Historique de base
+    const history = [
+        {from: "agent", text: "Bonjour Wilson, bienvenue sur le support Congo Developer ! Comment pouvons-nous vous aider aujourd'hui ?"},
+        {from: "user", text: "Bonjour, j’aimerais en savoir plus sur vos services de développement web."},
+        {from: "agent", text: "Bien sûr ! Nous proposons des sites web modernes, sécurisés et adaptés à vos besoins. Voulez-vous un devis ou une démo ?"}
+    ];
+
+    // Réponses automatiques simples
+    function botReply(msg) {
+        msg = msg.toLowerCase();
+        if (msg.includes("devis")) return "Merci pour votre intérêt ! Veuillez préciser votre projet et nous vous enverrons un devis personnalisé.";
+        if (msg.includes("prix") || msg.includes("coût")) return "Nos tarifs varient selon le service. Pour un devis précis, décrivez-nous votre besoin.";
+        if (msg.includes("merci")) return "Avec plaisir ! N’hésitez pas si vous avez d’autres questions.";
+        if (msg.includes("livre")) return "Nous proposons plusieurs livres numériques sur le développement et l’IA. Voulez-vous la liste ?";
+        if (msg.includes("logiciel")) return "Nous avons des logiciels pour la gestion, la facturation, la sécurité, etc. Voulez-vous plus de détails ?";
+        if (msg.includes("bonjour") || msg.includes("salut")) return "Bonjour ! Comment puis-je vous aider aujourd’hui ?";
+        return "Merci pour votre message. Un conseiller va vous répondre rapidement.";
+    }
+
+    function renderHistory() {
+        const chat = document.getElementById('chat-history');
+        chat.innerHTML = '';
+        history.forEach(msg => {
+            const isUser = msg.from === "user";
+            chat.innerHTML += `
+                <div class="msg ${isUser ? 'user' : 'agent'}">
+                    <img class="avatar" src="${isUser ? user.avatar : agent.avatar}" alt="">
+                    <div class="bubble">${msg.text}</div>
+                </div>
+            `;
+        });
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    function sendMessage(e) {
+        e.preventDefault();
+        const input = document.getElementById('chat-input');
+        const text = input.value.trim();
+        if (!text) return false;
+        history.push({from: "user", text});
+        renderHistory();
+        input.value = '';
+        setTimeout(() => {
+            const reply = botReply(text);
+            history.push({from: "agent", text: reply});
+            renderHistory();
+        }, 800);
+        return false;
+    }
+
+    // Initialisation
+    renderHistory();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
