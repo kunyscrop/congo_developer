@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>tuto/videos</title>
+</head>
+<body>
+    <div class="background-glow"></div>
+  <header>
+        <div class="logo">
+            <img src="../logo/Logo_Congo_Developer.png" alt="logo" width="100">
+            
+        </div>
+        <h2>Congo Developer</h2>
+        <nav class="main-nav">
+            <a href="../index.html">Accueil</a>
+            <a href="../link/service.html">Services</a>
+            <a href="../chat.html">Chat</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="video_tuto">
+        <video id="video_1">
+            <source src="../video/videoplayback (3).mp4" type="video/mp4">
+        </video>
+        <div class="bnt_video">
+            <button onclick="video_1.play()">play</button>
+            <button onclick="video_1.pause()">pause</button>
+            <button onclick="video_1.volume += 0.1">up.vl</button>
+            <button onclick="video_1.volume -= 0.1">down.vl</button>
+        </div>
+        <video id="video_2">
+            <source src="../video/videoplayback (4).mp4" type="video/mp4">
+        </video>
+        <div class="bnt_video">
+            <button onclick="video_2.play()">play</button>
+            <button onclick="video_2.pause()">pause</button>
+            <button onclick="video_2.volume += 0.1">up.vl</button>
+            <button onclick="video_2.volume -= 0.1">down.vl</button>
+        </div>
+        <video id="video_3">
+            <source src="../video/videoplayback (5).mp4" type="video/mp4">
+        </video>
+        <div class="bnt_video">
+            <button onclick="video_3.play()">play</button>
+            <button onclick="video_3.pause()">pause</button>
+            <button onclick="video_3.volume += 0.1">up.vl</button>
+            <button onclick="video_3.volume -= 0.1">down.vl</button>
+        </div>
+    </div>
+    
+    
+    
+    <nav class="mobile-nav">
+        <a href="../index.html"><i class="fa-solid fa-house"></i><br><span>Accueil</span></a>
+        <a href="../chat.html"><i class="fa-solid fa-comment"></i><br><span>Chat</span></a>
+        <a href="../services.html"><i class="fa-solid fa-briefcase"></i><br><span>Services</span></a>
+        <a href="../contact.html"><i class="fa-solid fa-user"></i><br><span>Contact</span></a>
+    </nav>
+    <footer>
+        <p>&copy; 2025 Congo Developer. Tous droits réservés.</p>
+    </footer>
+    <script>
+        const video_1 = document.getElementById("video_1");
+        const video_2 = document.getElementById("video_2");
+        const video_3 = document.getElementById("video_3");
+    </script>
+</body>
+</html>

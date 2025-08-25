@@ -38,20 +38,10 @@ header {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #00ffe7;
-    text-shadow: 0 0 8px #00ffe7aa;
+    clip-path: circle(40%);
 }
 
-.logo svg {
-    margin-right: 14px;
-    filter: drop-shadow(0 0 8px #00ffe788);
-}
+
 
 .main-nav a {
     margin-left: 28px;
@@ -168,6 +158,19 @@ header {
     font-size: 1rem;
 }
 
+.feature-card a{
+    position: relative;
+    left: 30%;
+    top: 20%;
+    
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+.feature-card a:hover{
+    transform: translateY(10px);
+    background-color: var(#00ffe7);
+    color: var(#00ffe7);
+}
+
 /* --- Mobile Navigation (Bottom) --- */
 .mobile-nav {
     display: flex;
@@ -191,14 +194,19 @@ header {
     padding: 0.5rem 0;
     transition: color 0.2s;
 }
-.mobile-nav a.active,
+.mobile-nav a.active{
+    color: #ed1b2f;
+}
 .mobile-nav a:hover {
     color: #00ffe7;
+    padding-bottom: 19px;
+    margin-bottom: -19px;
 }
 .mobile-nav a span {
     display: block;
     font-size: 0.9rem;
     margin-top: 0.2rem;
+   
 }
 
 /* --- Footer --- */
@@ -252,7 +260,8 @@ footer {
         display: flex;
         align-items: center;
     }
-}
+
+}   
 /* Airtel Money button and info */
 .pay-btn {
     display: flex;
@@ -283,4 +292,45 @@ footer {
     border-radius: 8px;
     padding: 0.3rem 0.7rem;
     display: inline-block;
+}
+
+.features a{
+    text-decoration: none;
+}
+.featurestt a{
+    text-decoration: none;
+}
+.bnt_video button{
+        padding: 6px;
+        border-radius: 13px;
+        position: relative;
+        top: -35px;
+        left: 13px;
+        background-color: #0f2027;
+        color: #00ffe7;
+        width: 80px;
+}
+.bnt_video button:hover{
+    background-color: #00ffe7;
+    color: #0f2027;
+}
+
+.video_tuto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    display: grid;  
+}
+#video_1{
+    border-radius: 25px;
+    border: 3px solid #00ffe7;
+}
+#video_2{
+    border-radius: 25px;
+    border: 3px solid #00ffe7;
+}
+#video_3{
+    border-radius: 25px;
+    border: 3px solid #00ffe7;
 }
