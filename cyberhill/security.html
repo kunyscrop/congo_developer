@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuber UI | Sécurité</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Même Header -->
+    <header>
+        <div class="logo">Cuber<span>UI</span></div>
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons"><button class="btn" onclick="logout()" id="btn-logout-pc">Déconnexion</button></div>
+    </header>
+
+    <main>
+        <a href="index.html" class="btn btn-back"><i class="fas fa-arrow-left"></i> Retour</a>
+        <h2 style="margin-bottom:20px;">Store de Sécurité</h2>
+        <div class="items-grid">
+            <div class="item">
+                <i class="fas fa-lock fa-2x" style="color:var(--secondary)"></i>
+                <h4>Shield Pro</h4>
+                <p class="price">500 $</p>
+                <button class="btn">Acheter</button>
+            </div>
+            <div class="item">
+                <i class="fas fa-user-secret fa-2x" style="color:var(--secondary)"></i>
+                <h4>VPN Ghost</h4>
+                <p class="price">120 $</p>
+                <button class="btn">Activer</button>
+            </div>
+            <div class="item">
+                <i class="fas fa-virus-slash fa-2x" style="color:var(--secondary)"></i>
+                <h4>Anti-Virus AI</h4>
+                <p class="price">850 $</p>
+                <button class="btn">Scanner</button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Menu Mobile -->
+    <nav class="nav-mobile">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i> <span>Accueil</span></a>
+        <a href="performance.html" class="nav-icon"><i class="fas fa-tachometer-alt"></i> <span>Perf</span></a>
+        <a href="about.html" class="nav-icon"><i class="fas fa-info"></i> <span>Infos</span></a>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>

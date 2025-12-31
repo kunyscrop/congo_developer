@@ -1,0 +1,94 @@
+/* --- style.css --- */
+:root {
+    --primary: #00f3ff; /* Cyan */
+    --secondary: #bc13fe; /* Violet */
+    --bg-dark: #050505;
+    --bg-card: #101010;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --success: #00ff88;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; padding-bottom: 90px; }
+a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
+ul { list-style: none; }
+
+/* ELEMENTS UI */
+.btn {
+    padding: 10px 25px;
+    border: 1px solid var(--primary);
+    background: rgba(0, 243, 255, 0.05);
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+.btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
+.btn-back { margin-bottom: 20px; display: inline-flex; align-items: center; gap: 10px; }
+.hidden { display: none !important; }
+
+/* HEADER */
+header {
+    position: fixed; top: 0; width: 100%; padding: 15px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333; z-index: 1000;
+}
+.logo { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+.logo span { color: var(--primary); }
+.nav-desktop ul { display: flex; gap: 25px; }
+.nav-desktop a:hover { color: var(--primary); }
+.congo-link { color: #fcd116 !important; font-weight: bold; }
+
+/* MAIN */
+main { margin-top: 100px; padding: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* CARTES & GRILLES */
+.grid-menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+.card { 
+    background: var(--bg-card); padding: 30px; border: 1px solid #222; border-radius: 12px; 
+    cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
+}
+.card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+.card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.card p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* TABLEAUX (DATA) */
+.data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+.data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+.data-table th { color: var(--primary); text-transform: uppercase; }
+.badge { padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+.badge-enc { background: rgba(188, 19, 254, 0.2); color: var(--secondary); }
+.badge-pub { background: rgba(0, 243, 255, 0.2); color: var(--primary); }
+
+/* BARRES DE PROGRESSION (PERF) */
+.perf-container { background: var(--bg-card); padding: 30px; border-radius: 10px; border: 1px solid #333; }
+.progress-group { margin-bottom: 25px; }
+.progress-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; }
+.progress-bg { width: 100%; height: 10px; background: #222; border-radius: 5px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+
+/* ITEMS SECURITE */
+.items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.item { background: #0f0f0f; border: 1px solid #333; padding: 20px; text-align: center; border-radius: 8px; transition: 0.3s; }
+.item:hover { border-color: var(--secondary); }
+.price { font-size: 1.2rem; font-weight: bold; color: var(--primary); margin: 10px 0; }
+
+/* NAV MOBILE */
+.nav-mobile {
+    display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+    background: #000; border-top: 1px solid #333; z-index: 2000;
+    justify-content: space-around; padding: 12px 0;
+}
+.nav-icon { display: flex; flex-direction: column; align-items: center; color: #666; font-size: 0.8rem; }
+.nav-icon.active { color: var(--primary); }
+.nav-icon i { font-size: 1.2rem; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+    header { display: none; }
+    .nav-mobile { display: flex; }
+}

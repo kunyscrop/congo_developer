@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="videos.css">
     <title>tuto/videos</title>
 </head>
 <body>
@@ -30,6 +30,7 @@
             <button onclick="video_1.pause()">pause</button>
             <button onclick="video_1.volume += 0.1">up.vl</button>
             <button onclick="video_1.volume -= 0.1">down.vl</button>
+           
         </div>
         <video id="video_2">
             <source src="../video/videoplayback (4).mp4" type="video/mp4">
@@ -64,6 +65,13 @@
     </footer>
     <script>
         const video_1 = document.getElementById("video_1");
+        let lastClick = 0;
+
+        video_1.addEventListener('click', () => {
+            const now = newdate().getTime();
+        })
+
+
         const video_2 = document.getElementById("video_2");
         const video_3 = document.getElementById("video_3");
     </script>

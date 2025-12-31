@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuber HILL | Performance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Cuber<span>HILL</span></div>
+        <nav class="nav-desktop"><ul><li><a href="index.html">Accueil</a></li></ul></nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="btn btn-back"><i class="fas fa-arrow-left"></i> Retour</a>
+        <h2 style="margin-bottom:20px;">Moniteur Système</h2>
+        
+        <div class="perf-container">
+            <div class="progress-group">
+                <div class="progress-label"><span>CPU Core 1-8</span> <span>78%</span></div>
+                <div class="progress-bg"><div class="progress-bar" style="width: 78%"></div></div>
+            </div>
+            <div class="progress-group">
+                <div class="progress-label"><span>RAM (32GB)</span> <span>45%</span></div>
+                <div class="progress-bg"><div class="progress-bar" style="width: 45%; background: var(--primary);"></div></div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-mobile">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i> <span>Accueil</span></a>
+        <a href="performance.html" class="nav-icon active"><i class="fas fa-tachometer-alt"></i> <span>Perf</span></a>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>

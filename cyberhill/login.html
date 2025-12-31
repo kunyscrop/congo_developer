@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuber UI | Connexion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div style="max-width:400px; margin:0 auto; background:#101010; padding:40px; border-radius:10px; border:1px solid #333;">
+            <h2 id="auth-title" style="text-align:center; color:var(--primary); margin-bottom:20px;">Connexion</h2>
+            
+            <form onsubmit="handleAuth(event, true)" id="login-form">
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px;">Email</label>
+                    <input type="email" placeholder="email@cuber.com" required style="width:100%; padding:10px; background:#000; border:1px solid #444; color:white;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px;">Mot de passe</label>
+                    <input type="password" placeholder="••••••••" required style="width:100%; padding:10px; background:#000; border:1px solid #444; color:white;">
+                </div>
+                <button type="submit" class="btn" style="width:100%">Se Connecter</button>
+            </form>
+
+            <p style="margin-top:20px; text-align:center; font-size:0.9rem;">
+                <a href="#" onclick="alert('Fonctionnalité à venir')" style="color:var(--primary);">Pas de compte ? <a href="#" style=" color: var(--primary);">ChatBot</a> </a>
+            </p>
+        </div>
+    </main>
+    
+    <nav class="nav-mobile">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i> <span>Accueil</span></a>
+        <a href="login.html" class="nav-icon active"><i class="fas fa-user"></i> <span>Compte</span></a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
