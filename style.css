@@ -38,10 +38,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: -.2rem 2.5rem;
-    background: rgba(20, 30, 48, 0.85);
-    box-shadow: 0 4px 24px rgba(0,255,231,0.08);
+    background: linear-gradient(to right, rgba(35, 117, 122, 0.068) , rgba(255, 255, 255, 0.247),rgba(255, 255, 255, 0.151) );
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.322);
     backdrop-filter: blur(8px);
     position: sticky;
+    border: 1px solid rgba(255, 255, 255, 0.507);
+    border-radius: 50px;
     top: 0;
     z-index: 10;
 }
@@ -49,8 +51,10 @@ header {
 .logo {
     clip-path: circle(40%);
 }
-
-
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
 
 .main-nav a {
     margin-left: 28px;
@@ -61,6 +65,10 @@ header {
     letter-spacing: 1px;
     transition: color 0.2s;
     position: relative;
+    border: solid 1px white;
+    box-shadow:0 0 8px  #222;
+    border-radius: 20px;
+    padding: 5px;
 }
 /*.main-nav a.active,
 /*.main-nav a:hover {
@@ -199,11 +207,40 @@ header {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    background: rgba(20, 30, 48, 0.95);
-    box-shadow: 0 -2px 16px #00ffe788;
+    width: 80%;
+    background: linear-gradient(to right, rgba(35, 117, 122, 0.068) , rgba(255, 255, 255, 0.247),rgba(255, 255, 255, 0.151) );
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.322);
+    backdrop-filter: blur(8px);
     padding: 0.5rem 0;
     z-index: 20;
+    border: 1px solid white;
+    border-radius: 40px;
+    margin: 25px 1px 7px 1px;
+}
+/*Simgle Contact*/
+#mobile-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: -80px;
+    background: linear-gradient(to right, rgba(35, 117, 122, 0.068) , rgba(255, 255, 255, 0.247),rgba(255, 255, 255, 0.151) );
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.322);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    z-index: 20;
+    border: 1px solid white;
+    border-radius: 40px;
+    height: 16px;
+    width: 25px;
+
+}
+#mobile-nav a:hover{
+    color: #00ffe7;
+    transform: scale(1);
+     padding-bottom: 0;
+    margin-bottom: 0;
 }
 .mobile-nav a {
     color: #e0e0e0;
@@ -242,27 +279,7 @@ footer {
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 900px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .feature-card {
-        max-width: 90vw;
-    }
-    header {
-        padding: 1rem 1.2rem;
-    }
-}
-@media (max-width: 768px) {
-    .hero {
-        padding: 0.2rem 0.5rem;
-    }
-    .features {
-        gap: 1rem;
-    }
-}
+
 @media (max-width: 500px) {
     .main-nav {
         display: none;
@@ -275,7 +292,9 @@ footer {
     }
 }
 @media (min-width: 501px) {
-    .mobile-nav { display: none !important; }
+    .mobile-nav { 
+        display: none !important;
+     }
     #kntt {
         justify-content: center;
         display: flex;
